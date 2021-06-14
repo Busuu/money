@@ -74,6 +74,15 @@ class Currency
      * @var array
      */
     private static $currencies = [
+        'NGN' => [
+            'code' => 'NGN',
+            'title' => 'Nigerian Naira',
+            'symbol' => '₦',
+            'precision' => 2,
+            'thousandSeparator' => ',',
+            'decimalSeparator' => '.',
+            'symbolPlacement' => 'before'
+        ],
         'ARS' => [
             'code' => 'ARS',
             'title' => 'Argentine Peso',
@@ -716,7 +725,7 @@ class Currency
         'RUB' => [
             'code' => 'RUB',
             'title' => 'Russian Ruble',
-            'symbol' => ' руб',
+            'symbol' => ' ₽',
             'precision' => 2,
             'thousandSeparator' => ' ',
             'decimalSeparator' => ',',
@@ -1047,6 +1056,16 @@ class Currency
     public static function getAllCurrencies()
     {
         return self::$currencies;
+    }
+    
+    /**
+     * Set currency
+     * 
+     * @return void
+     */
+    public static function setCurrency($code, $currency)
+    {
+        self::$currencies[$code] = $currency;
     }
 
     /**
